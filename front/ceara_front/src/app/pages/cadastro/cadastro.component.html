@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="form-container">
+        <h2>Cadastro</h2>
+
+        <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+            <label>Nome</label>
+            <input formControlName="nome" type="text">
+
+            <label>Email</label>
+            <input formControlName="nome" type="text">
+
+            <label>Telefone</label>
+            <input formControlName="nome" type="text">
+
+            <label>Senha</label>
+            <input formControlName="nome" type="text">
+
+            <label>Repita a Senha</label>
+            <input formControlName="nome" type="text">
+
+
+            <div class="buttons">
+                <button type="reset">Limpar</button>
+                <button type="submit">Registrar</button>
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+    <div class="image-container">
+        <h1>O SITE DO<br>TORCEDOR</h1>
+        <img src="vovo.svg" alt="Mascote do Ceará">
+    </div>
+
+</div>
+
