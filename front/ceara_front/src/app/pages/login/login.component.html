@@ -1,6 +1,7 @@
 <div class="background">
     <div class="login-card">
       <img src="ceara.svg" alt="Logo Ceará" class="logo" />
+      
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <label for="login">Login</label>
         <input id="login" formControlName="login" type="text" />
@@ -12,7 +13,7 @@
   
         <div class="button-group">
           <button type="submit">Entrar</button>
-          <a href="cadastro"><button type="button">Registrar</button></a>
+          <a href="register"><button type="button">Registrar</button></a>
         </div>
       </form>
     </div>

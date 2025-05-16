@@ -4,11 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 
 @Component({
-  selector: 'app-perfil',
+  selector: 'app-bolao',
   imports: [CommonModule, ReactiveFormsModule, NavbarComponent],
-  templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.sass'
+  templateUrl: './bolao.component.html',
+  styleUrl: './bolao.component.sass'
 })
-export class PerfilComponent {
+export class BolaoComponent {
 
 }

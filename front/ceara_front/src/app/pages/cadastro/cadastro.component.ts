@@ -26,4 +26,7 @@ export class CadastroComponent {
       console.log(this.cadastroForm.value);
     }
   }
+  clear(){
+    this.cadastroForm.reset()
+  }
 }
