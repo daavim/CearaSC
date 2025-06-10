@@ -1,20 +1,21 @@
 <div class="background">
-    <div class="login-card">
-      <img src="ceara.svg" alt="Logo Ceará" class="logo" />
-      
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <label for="login">Login</label>
-        <input id="login" formControlName="login" type="text" />
-        
-        <label for="senha">Senha</label>
-        <input id="senha" formControlName="senha" type="password" />
-  
-        <a href="" class="forgot-password">Esqueceu sua senha?</a>
-  
-        <div class="button-group">
-          <button type="submit">Entrar</button>
-          <a href="register"><button type="button">Registrar</button></a>
-        </div>
-      </form>
-    </div>
+  <div class="login-card">
+    <img src="ceara2.png" alt="Logo Ceará" class="logo" />
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="login">LOGIN</label>
+      <input id="login" type="text" formControlName="login"/>
+
+      <label for="senha">SENHA</label>
+      <input id="senha" type="password" formControlName="senha"/>
+
+      <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+
+      <div class="button-group">
+        <button type="submit">Entrar</button>
+        <button type="button" (click)="goToRegister()">Registrar</button>
+      </div>
+    </form>
+
+  </div>
 </div>

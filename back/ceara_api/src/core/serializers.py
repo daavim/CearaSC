@@ -2,12 +2,12 @@
 
 from rest_framework import serializers
 
-from .models import Alternativa, ItemMuseu, Pergunta, Quiz
+from .models import Alternativa, Museu, Pergunta, Quiz
 
 
-class ItemMuseuSerializer(serializers.HyperlinkedModelSerializer):
+class MuseuSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = ItemMuseu
+        model = Museu
         fields = "__all__"
 
 

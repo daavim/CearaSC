@@ -1,77 +1,100 @@
-.background
-  position: fixed
-  top: 0
-  left: 0
-  width: 100vw
-  height: 100vh
-  display: flex
-  justify-content: center
-  align-items: center
+* 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+
+.background 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: repeating-linear-gradient(
     90deg,
+
     black 0%,
-    black 20%,
-    white 20%,
-    white 40%,
-    black 40%,
-    black 60%,
-    white 60%,
-    white 80%,
-    black 80%,
-    black 100%
-  )
+    black 35%,
 
-.login-card
-  background: #00000040
-  padding: 30px
-  border-radius: 10px
-  text-align: center
-  width: 300px
-  min-height: 350px
+    white 35%,
+    white 45%,
 
+    black 45%,
+    black 55%,
 
-.logo
-  width: 82px
-  height: 85px
-  margin-bottom: 20px
+    white 55%,
+    white 65%,
+
+    black 65%,
+    black 100%,
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
-form
-  display: flex
-  flex-direction: column
-  align-items: stretch
-
-input
-  margin-bottom: 10px
-  padding: 10px
-  border-radius: 8px
-  border: none
-  outline: none
+.login-card 
+  background:#3f3f3f;
+  padding: 32px;
+  border-radius: 20px;
+  width: 320px;
+  box-shadow: 0 10px 30px #0a0a0a;
+  text-align: center;
 
 
-.forgot-password
-  text-align: left
-  color: limegreen
-  font-size: 14px
-  text-decoration: none
-  margin-bottom: 20px
+.logo 
+  width: 90px;
+  height: auto;
+  margin-bottom: 10px;
 
 
-.button-group
-  display: flex
-  justify-content: space-around
+form 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
-button
-  padding: 10px 20px
-  border-radius: 8px
-  border: none
-  background: #D9D9D9
-  cursor: pointer
 
 label 
-  text-align: left
-  margin-bottom: 5px
-  font-family: Arial
-  font-size: 14px
-  color: white
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: -8px;
+  margin-top: 6px;
+
+
+input 
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+
+
+.forgot-password 
+  color: limegreen;
+  text-decoration: none;
+  text-align: left;
+  font-size: 14px;
+  margin-top: -3px;
+
+
+.button-group 
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+
+
+button 
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: 0.2s ease;
 

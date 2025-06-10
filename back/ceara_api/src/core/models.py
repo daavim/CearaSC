@@ -3,10 +3,10 @@
 from django.db import models
 
 
-class ItemMuseu(models.Model):
+class Museu(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    data = models.DateField(auto_now_add=True)
+    data = models.DateField()
 
 
 class Quiz(models.Model):

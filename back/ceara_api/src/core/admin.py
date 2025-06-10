@@ -2,11 +2,11 @@
 
 from django.contrib import admin
 
-from .models import Alternativa, ItemMuseu, Pergunta, Quiz
+from .models import Alternativa, Museu, Pergunta, Quiz
 
 
-@admin.register(ItemMuseu)
-class ItemMuseuAdmin(admin.ModelAdmin):
+@admin.register(Museu)
+class MuseuAdmin(admin.ModelAdmin):
     list_display = ["titulo", "descricao", "data"]
 
 
