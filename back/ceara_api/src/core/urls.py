@@ -3,8 +3,7 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from .views import (AlternativaViewSet, MuseuViewSet, PerguntaViewSet,
-                    QuizViewSet)
+from .views import AlternativaViewSet, MuseuViewSet, PerguntaViewSet, QuizViewSet
 
 router = routers.DefaultRouter()
 router.register(r"museu", MuseuViewSet)

@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,21 +11,30 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './cadastro.component.sass'
 })
 export class CadastroComponent {
-  cadastroForm: FormGroup;
+  cadastroForm = new FormGroup({
+    username: new FormControl("", [Validators.required]),
+    senha: new FormControl("", [Validators.required]),
+    confirmSenha: new FormControl("", [Validators.required]),
+  })
 
-  constructor(private fb: FormBuilder){
-    this.cadastroForm = this.fb.group({
-      nome: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      telefone: ['',],
-      senha: ['', [Validators.required, Validators.minLength(6)]],
-      senha2: ['', Validators.required],
-    });
-  }
+  constructor(private router:Router, private cliente: HttpClient) {}
 
   onSubmit(){
-    if (this.cadastroForm.valid){
-      console.log(this.cadastroForm.value);
+    if (this.cadastroForm.valid) {
+      this.cliente
+      .post<{ access: string; refresh: string }>(
+        'http://localhost:8000/auth/users/',
+        { username: this.cadastroForm.controls.username.value,
+          password: this.cadastroForm.controls.senha.value,
+          re_password: this.cadastroForm.controls.confirmSenha.value 
+        },
+        { observe: 'response'}
+      )
+      .subscribe((resp) => {
+        if (resp.status == 201){
+          this.router.navigate(['/login'])
+        }
+      });
     }
   }
   clear(){

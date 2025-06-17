@@ -4,8 +4,12 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from .models import Alternativa, Museu, Pergunta, Quiz
-from .serializers import (AlternativaSerializer, MuseuSerializer,
-                          PerguntaSerializer, QuizSerializer)
+from .serializers import (
+    AlternativaSerializer,
+    MuseuSerializer,
+    PerguntaSerializer,
+    QuizSerializer,
+)
 
 
 class MuseuViewSet(viewsets.ReadOnlyModelViewSet):
