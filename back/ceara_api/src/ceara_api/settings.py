@@ -70,9 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "ceara_api.wsgi.application"
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200'
-]
+CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
 
 
 # Database

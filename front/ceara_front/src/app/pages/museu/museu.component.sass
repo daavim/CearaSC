@@ -1,10 +1,74 @@
 .container
-  background-color: #1c1c1c;
-  color: white;
-  min-height: 100vh;
-  padding: 0;
+  background-color: #ffffff
+  color: white
+  min-height: 100vh
+  padding: 0
   position: fixed
   top: 0
   left: 0
   width: 100vw
   height: 100vh
+
+body
+  background-color: #f5e4cc
+  margin: 0
+  font-family: Arial, sans-serif
+
+.timeline-container
+  position: relative
+  padding: 80px 40px
+  max-width: 1200px
+  margin: auto
+
+.timeline-line
+  position: absolute
+  top: 200px
+  left: 0
+  right: 0
+  height: 5px
+  background-color: black
+  z-index: 1
+
+.event
+  position: relative
+  display: inline-block
+  text-align: center
+  width: 22%
+  z-index: 2
+
+  img
+    width: 80px
+    height: auto
+    margin-bottom: 15px
+
+.dot
+  width: 15px
+  height: 15px
+  background-color: #25E82A
+  border-radius: 50%
+  margin: 0 auto
+  margin-top: 10px
+  border: 2px solid black
+
+.year
+  margin-top: 5px
+  font-weight: bold
+  color: black
+
+.mascot
+  position: absolute
+  right: -4%
+  top: 85%
+  bottom: 0
+  width: 200px
+
+@media (max-width: 768px)
+  .event
+    width: 48%
+    margin-bottom: 40px
+
+  .timeline-line
+    top: 200px
+
+  .mascot
+    display: none
