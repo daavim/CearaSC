@@ -10,5 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './quiz.component.sass'
 })
 export class QuizComponent {
+  
+  quizzes = [
+  { nome: 'Quiz #1' },
+  { nome: 'Quiz #2' },
+  { nome: 'Quiz #3' },
+  { nome: 'Quiz #4' }
+];
 
 }

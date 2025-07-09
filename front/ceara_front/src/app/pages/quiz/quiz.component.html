@@ -1,4 +1,21 @@
 <div class="container">
-    <app-navbar></app-navbar>
-    <p>quiz works!</p>
+  <app-navbar></app-navbar>
+
+  <div class="quizzes-page">
+    <div class="quiz-list">
+      <div class="quiz-item" *ngFor="let quiz of quizzes">
+        <img src="ideas.png" alt="Ícone Quiz" class="quiz-icon">
+        <span>{{ quiz.nome }}</span>
+      </div>
+    </div>
+
+    <div class="quiz-details">
+      <div class="quiz-placeholder">
+        <!-- Conteúdo futuro aqui -->
+      </div>
+    </div>
+
+    <!-- Mascote -->
+    <img src="Vovo_Apontando.png" alt="Mascote" class="mascote">
+  </div>
 </div>

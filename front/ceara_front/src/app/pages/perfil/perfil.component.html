@@ -1,38 +1,26 @@
 <div class="perfil-container">
   <app-navbar></app-navbar>
-  <section class="perfil-header">
-    <img src="matue.svg" alt="Foto do usuário" class="foto">
+
+  <section class="perfil-header" *ngIf="usuario">
+    <img [src]="usuario.foto || 'ceara2.png'" alt="Foto do usuário" class="foto">
     <div class="infos">
-      <h2>Matue da Silva <span class="nivel">Nível: BRONZE</span></h2>
-      <p>Entrou em: 23/04/2025</p>
+      <h2>
+        {{ usuario.nome }}
+      </h2>
+      <p>Entrou em: {{ usuario.data_entrada | date:'dd/MM/yyyy' }}</p>
     </div>
   </section>
 
-  <section class="atividade">
-
-    <div class="box quiz">
-
+  <section class="atividade" *ngIf="usuario?.historico?.length">
+    <div *ngFor="let item of usuario.historico" class="box" [ngClass]="item.tipo">
       <div class="icone">
-        <img src="ceara.svg" alt="Escudo" />
+        <img src="quiz.png" alt="Ícone" *ngIf="item.tipo === 'quiz'">
+        <img src="ideas.png" alt="Ícone" *ngIf="item.tipo === 'palpite'">
       </div>
-
       <div class="conteudo">
-        <h3>Quiz #1 - A História do Ceará SC</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus doloremque laborum excepturi! Asperiores optio est facilis officiis nisi voluptatum nostrum accusantium, debitis dolorum omnis doloribus quia, vel et? Deleniti, dolores.</p>
+        <h3 *ngIf="item.titulo">{{ item.titulo }}</h3>
+        <p>{{ item.descricao }}</p>
       </div>
-
-    </div>
-
-    <div class="box palpite">
-
-      <div class="icone">
-        <img src="ceara.svg" alt="Escudo Ceará" />
-      </div>
-
-      <div class="conteudo">
-        <p>Matue Palpitou no Jogo entre CEARÁ x PALMEIRAS</p>
-      </div>
-
     </div>
   </section>
 </div>

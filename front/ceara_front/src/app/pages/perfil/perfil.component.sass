@@ -1,96 +1,90 @@
-body 
-  margin: 0;
-  font-family: Arial, sans-serif;
+body
+  margin: 0
+  font-family: Arial, sans-serif
 
-
-
-.perfil-container 
-  background-color: #1c1c1c;
-  color: white;
-  min-height: 100vh;
-  padding: 0;
+.perfil-container
+  background-color: #1c1c1c
+  color: white
+  min-height: 100vh
+  padding: 0
   position: fixed
   top: 0
   left: 0
   width: 100vw
   height: 100vh
+  overflow-y: auto
 
+.perfil-header
+  display: flex
+  align-items: center
+  background-color: #7d48b1
+  padding: 2rem
+  margin: 2rem
+  border-radius: 16px
 
+.foto
+  width: 100px
+  height: 100px
+  object-fit: cover
+  margin-right: 2rem
+  //border-radius: 12px
+  //border: 2px solid white
 
-.perfil-header 
-  display: flex;
-  align-items: center;
-  padding: 2rem;
+.infos
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
 
+.infos h2
+  margin: 0
+  font-size: 1.6rem
+  color: white
 
-.foto 
-  width: 100px;
-  border-radius: 50%;
-  margin-right: 2rem;
-  border: 3px solid white;
+.atividade
+  padding: 0 2rem 2rem 2rem
 
+.box
+  background-color: #7d48b1
+  border-radius: 16px
+  display: flex
+  padding: 1rem
+  margin-bottom: 1.5rem
 
-.infos h2 
-  margin: 0;
-  font-size: 1.5rem;
+.box.quiz
+  background-color: #a87dd3
 
+.icone
+  width: 60px
+  margin-right: 1rem
+  display: flex
+  align-items: flex-start
 
-.nivel 
-  font-size: 0.75rem;
-  color:#d8a109
-  margin-left: 10px;
+.icone img
+  width: 100%
 
+.conteudo h3
+  margin: 0
+  font-size: 1.1rem
+  color: white
 
-.atividade 
-  padding: 0 2rem 2rem 2rem;
-
-
-.box 
-  background-color: #7d48b1;
-  border-radius: 16px;
-  display: flex;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-
-
-.box.quiz 
-  background-color: #a87dd3;
-
-
-.box .icone 
-  width: 60px;
-  margin-right: 1rem;
-
-
-.box .icone img 
-  width: 100%;
-
-
-.box .conteudo h3 
-  margin-top: 0;
-
+.conteudo p
+  margin-top: 0.5rem
+  font-size: 0.95rem
+  color: #eee
 
 @media (max-width: 768px)
-  .perfil-header 
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  
+  .perfil-header
+    flex-direction: column
+    align-items: center
+    text-align: center
 
-  .foto 
-    margin: 0 0 1rem 0;
-  
+  .foto
+    margin: 0 0 1rem 0
 
-  .menu 
-    flex-wrap: wrap;
-  
+  .box
+    flex-direction: column
+    align-items: center
+    text-align: center
 
-  .box 
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  
-
-  .box .icone 
-    margin-bottom: 1rem;
-  
+  .icone
+    margin-bottom: 1rem

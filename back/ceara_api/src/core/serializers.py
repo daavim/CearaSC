@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from .models import Alternativa, Museu, Pergunta, Quiz
+from .models import Alternativa, Museu, Pergunta, Quiz, Historico
 
 
 class MuseuSerializer(serializers.HyperlinkedModelSerializer):
@@ -26,4 +26,10 @@ class PerguntaSerializer(serializers.HyperlinkedModelSerializer):
 class AlternativaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Alternativa
+        fields = "__all__"
+
+
+class HistoricoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Historico
         fields = "__all__"
