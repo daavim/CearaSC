@@ -13,4 +13,8 @@ export class PerfilService {
   getPerfil(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+  updateFoto(formData: FormData): Observable<any> {
+    return this.http.patch(`http://localhost:8000/api/perfil/foto/`, formData);
+  }
 }

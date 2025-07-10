@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from .models import Alternativa, Museu, Pergunta, Quiz, Historico
+from .models import Alternativa, Museu, Pergunta, Quiz, Historico, Jogador, Perfil
 
 
 class MuseuSerializer(serializers.HyperlinkedModelSerializer):
@@ -38,3 +38,16 @@ class HistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Historico
         fields = "__all__"
+        read_only_fields = ['user']
+
+
+class JogadorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Jogador
+        fields = ['id', 'nome', 'sobrenome', 'idade', 'posicao']
+
+
+class FotoPerfilSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Perfil
+        fields = ['foto']

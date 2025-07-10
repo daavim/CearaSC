@@ -11,13 +11,18 @@
       <ul>
         <li *ngFor="let alt of pergunta.alternativas">
           <label class="alternativa">
-            <input type="radio" [name]="'pergunta_' + pergunta.id" [value]="alt.id" />
+            <input
+                type="radio"
+                [name]="'pergunta_' + pergunta.id"
+                [value]="alt.id"
+                (change)="onSelecionarAlternativa(pergunta.id, alt.id)"
+            />
             <span>{{ alt.texto }}</span>
           </label>
         </li>
       </ul>
     </div>
 
-    <button class="btn-finalizar">Finalizar Quiz</button>
+    <button class="btn-finalizar" (click)="finalizarQuiz()">Finalizar Quiz</button>
   </div>
 </div>

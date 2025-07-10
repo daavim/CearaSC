@@ -2,13 +2,31 @@
   <app-navbar></app-navbar>
 
   <section class="perfil-header" *ngIf="usuario">
-    <img [src]="usuario.foto || 'ceara2.png'" alt="Foto do usuário" class="foto">
-    <div class="infos">
-      <h2>
-        {{ usuario.nome }}
-      </h2>
-      <p>Entrou em: {{ usuario.data_entrada | date:'dd/MM/yyyy' }}</p>
+    <div class="perfil-info">
+
+      <div class="foto-wrapper" (click)="fileInput.click()">
+        <img [src]="usuario.foto || 'ceara2.png'" alt="Foto do usuário" class="foto">
+        <div class="upload-overlay">
+          <i class="fa-solid fa-camera"></i>
+        </div>
+        <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+      </div>
+      <div class="infos">
+        <h2>
+          <i class="fa-solid fa-user"></i>
+          {{ usuario.nome }}
+        </h2>
+        <p>
+          <i class="fa-regular fa-calendar"></i>
+          Entrou em: {{ usuario.data_entrada | date:'dd/MM/yyyy' }}
+        </p>
+      </div>
     </div>
+
+    <button class="logout-btn" (click)="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Sair
+    </button>
   </section>
 
   <section class="atividade" *ngIf="usuario?.historico?.length">
@@ -23,4 +41,5 @@
       </div>
     </div>
   </section>
+
 </div>

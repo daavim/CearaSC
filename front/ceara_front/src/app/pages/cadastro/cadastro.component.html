@@ -1,33 +1,31 @@
 <div class="container">
+    <a href="/login" class="back-arrow">&#8592;</a>
+
     <div class="form-container">
         <h2>Cadastro</h2>
 
         <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
             <label>Usuário</label>
-            <input formControlName="username" type="text">
+            <input formControlName="username" type="text" placeholder="Digite seu usuário">
 
             <label>Senha</label>
-            <input formControlName="senha" type="text">
+            <input formControlName="senha" type="password" placeholder="Crie uma senha forte">
 
             <label>Repita a Senha</label>
-            <input formControlName="confirmSenha" type="text">
-
+            <input formControlName="confirmSenha" type="password" placeholder="Confirme sua senha">
 
             <div class="buttons">
-                <button type="reset" (click)="clear()">Limpar</button>
                 <button type="submit">Registrar</button>
             </div>
-
-
         </form>
+
+        <div class="login-link">
+            <p>Já tem uma conta? <a href="/login">Faça o login</a></p>
+        </div>
     </div>
-
-
 
     <div class="image-container">
         <h1>O SITE DO<br>TORCEDOR</h1>
         <img src="vovo.svg" alt="Mascote do Ceará">
     </div>
-
 </div>
-

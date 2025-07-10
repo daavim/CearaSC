@@ -14,26 +14,47 @@ export class MuseuComponent {
 
   eventos = [
     {
-      ano: '1914',
-      img: 'escudo1914.svg',
-      descricao: 'Fundação do clube com o nome "Rio Branco Foot-Ball Club", usando as cores lilás e branco.'
+      ano: 1915,
+      descricao: 'Fundação do Ceará Sporting Club.',
+      img: 'escudo1915.svg'
     },
     {
-      ano: '1915',
-      img: 'escudo1915.svg',
-      descricao: 'Mudança do nome para Ceará Sporting Club e adoção das cores preta e branca.'
+      ano: 1918,
+      descricao: 'Primeiro Clássico-Rei oficial: Ceará 2x0 Fortaleza.',
+      img: 'escudo1918.svg'
     },
     {
-      ano: '1955',
-      img: 'escudo1955.svg',
-      descricao: 'Conquista do Campeonato Cearense de forma invicta, reforçando a tradição do Vozão.'
+      ano: 1964,
+      descricao: 'Conquista da Taça Brasil – Zona Norte-Nordeste.',
+      img: 'escudo1964.svg'
     },
     {
-      ano: '1969',
-      img: 'escudo1969.svg',
-      descricao: 'Ano marcante com a modernização da estrutura do clube e novos títulos estaduais.'
+      ano: 1994,
+      descricao: 'Vice-campeão da Copa do Brasil.',
+      img: 'escudo1994.svg'
+    },
+    {
+      ano: 2015,
+      descricao: '1º título da Copa do Nordeste.',
+      img: 'escudo2015.svg'
+    },
+    {
+      ano: 2022,
+      descricao: 'Quartas da Copa Sul-Americana — melhor campanha internacional.',
+      img: 'escudo2022.svg'
+    },
+    {
+      ano: 2023,
+      descricao: 'Conquista da 47ª edição do Cearense e reformulação com base e estrangeiros.',
+      img: 'escudo2023.svg'
+    },
+    {
+      ano: 2024,
+      descricao: 'Títulos Sub-15, 17 e 20 + criação do departamento feminino.',
+      img: 'escudo2024.svg'
     }
   ];
+
 
   selecionarEvento(evento: any) {
     this.eventoSelecionado = evento;

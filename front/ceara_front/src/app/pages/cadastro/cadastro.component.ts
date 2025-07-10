@@ -37,7 +37,4 @@ export class CadastroComponent {
       });
     }
   }
-  clear(){
-    this.cadastroForm.reset()
-  }
 }

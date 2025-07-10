@@ -3,19 +3,26 @@
 
   <section class="home-content">
     <h2>Elenco Atual</h2>
-    <div class="jogadores">
-      <div class="card-jogador" *ngFor="let jogador of jogadores">
-        <img [src]="jogador.foto" alt="{{ jogador.nome }}">
-        <h3>{{ jogador.nome }}</h3>
-        <p>Posição: {{ jogador.posicao }}</p>
-        <p>Idade: {{ jogador.idade }} anos</p>
+    <div class="jogadores-wrapper">
+      <button class="seta esquerda" (click)="scrollJogadores('esquerda')">‹</button>
+
+      <div class="jogadores" #carrosselJogadores>
+        <div class="card-jogador" *ngFor="let jogador of jogadores">
+          <img [src]="jogador.nome + '_' + jogador.sobrenome + '.png'" alt="{{ jogador.nome }}">
+          <h3>{{ jogador.nome }} {{ jogador.sobrenome }}</h3>
+          <p>Posição: {{ jogador.posicao }}</p>
+          <p>Idade: {{ jogador.idade }} anos</p>
+        </div>
       </div>
+
+      <button class="seta direita" (click)="scrollJogadores('direita')">›</button>
     </div>
 
-    <h2>Últimos Jogos</h2>
+
+    <h2>Próximos Jogos</h2>
     <div class="jogos">
       <div class="jogo" *ngFor="let jogo of jogos">
-        <p><strong>{{ jogo.data }}</strong></p>
+        <p><strong>{{ jogo.data }} - {{jogo.local}}</strong></p>
         <p>{{ jogo.time_casa }} {{ jogo.placar }} {{ jogo.time_visitante }}</p>
       </div>
     </div>

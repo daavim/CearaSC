@@ -2,20 +2,15 @@
   <app-navbar></app-navbar>
 
   <div class="quizzes-page">
-    <div class="quiz-list">
+    <h2 class="titulo-quizzes">Escolha um Quiz</h2>
+
+    <div class="quiz-grid">
       <div class="quiz-item" *ngFor="let quiz of quizzes" [routerLink]="['/quiz', quiz.id]">
         <img src="ideas.png" alt="Ícone Quiz" class="quiz-icon">
-        <span>{{ quiz.nome }}</span>
+        <span>{{ quiz.titulo }}</span>
       </div>
     </div>
 
-    <div class="quiz-details">
-      <div class="quiz-placeholder">
-        <!-- Conteúdo futuro aqui -->
-      </div>
-    </div>
-
-    <!-- Mascote -->
     <img src="Vovo_Apontando.png" alt="Mascote" class="mascote">
   </div>
 </div>

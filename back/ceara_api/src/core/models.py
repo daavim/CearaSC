@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 class Museu(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
@@ -50,3 +51,25 @@ class Historico(models.Model):
 
     def __str__(self):
         return f'{self.user.username} - {self.tipo} - {self.titulo}'
+
+
+class Jogador(models.Model):
+    nome = models.CharField(max_length=255)
+    sobrenome = models.CharField(max_length=255)
+    idade = models.IntegerField()
+    posicao = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.nome} {self.sobrenome}"
+
+
+
+def user_directory_path(instance, filename):
+    return f'perfil_fotos/user_{instance.user.id}/{filename}'
+
+class Perfil(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='perfil')
+    foto = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username

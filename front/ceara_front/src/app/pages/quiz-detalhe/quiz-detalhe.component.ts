@@ -67,6 +67,7 @@ export class QuizDetalheComponent implements OnInit{
       },
       error: (err) => {
         console.error('Erro ao salvar histórico:', err);
+        console.log('Detalhes do erro:', err.error);
       }
     });
   }

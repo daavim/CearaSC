@@ -1,93 +1,85 @@
 .container
-  background-color:#ffeacb
-  color: white
+  background-color: #ffeacb
+  color: black
   min-height: 100vh
-  padding: 0
-  position: fixed
+  overflow-y: auto
+  overflow-x: hidden
   top: 0
   left: 0
   width: 100vw
   height: 100vh
-
-body
-  background-color: #f5e4cc
-  margin: 0
-  font-family: Arial, sans-serif
+  padding: 0
+  position: fixed
 
 .timeline-container
   position: relative
-  padding: 80px 40px
-  max-width: 1200px
-  margin: auto
+  padding: 2rem
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.timeline-scroll
+  display: flex
+  align-items: center
+  overflow-x: auto
+  padding: 2rem 1rem
+  gap: 3rem
+  position: relative
+  border-top: 4px solid black
+  scroll-behavior: smooth
 
 .timeline-line
   position: absolute
-  top: 200px
+  top: 50%
   left: 0
   right: 0
-  height: 5px
-  background-color: black
-  z-index: 1
+  height: 4px
+  background-color: transparent
+  z-index: 0
 
 .event
   position: relative
-  display: inline-block
-  text-align: center
-  width: 22%
+  display: flex
+  flex-direction: column
+  align-items: center
+  flex: 0 0 auto
   z-index: 2
+  cursor: pointer
+  transition: transform 0.2s ease
+
+  &:hover
+    transform: scale(1.05)
 
   img
-    width: 80px
+    width: 70px
     height: auto
-    margin-bottom: 15px
+    margin-bottom: 0.5rem
 
-.dot
-  width: 15px
-  height: 15px
-  background-color: #25E82A
-  border-radius: 50%
-  margin: 0 auto
-  margin-top: 10px
-  border: 2px solid black
+  .dot
+    width: 15px
+    height: 15px
+    background-color: #25E82A
+    border: 2px solid black
+    border-radius: 50%
+    margin: 0.3rem 0
 
-.year
-  margin-top: 5px
-  font-weight: bold
-  color: black
-
-.mascot
-  position: absolute
-  right: -4%
-  top: 85%
-  bottom: 0
-  width: 200px
-
-@media (max-width: 768px)
-  .event
-    width: 48%
-    margin-bottom: 40px
-
-  .timeline-line
-    top: 200px
-
-  .mascot
-    display: none
-
+  .year
+    font-weight: bold
+    font-size: 0.9rem
 
 .info-card
-  position: absolute
-  top: 40px
-  left: 50%
-  transform: translateX(-50%)
   background-color: #fff
   color: #000
   border: 2px solid black
   padding: 1rem
   border-radius: 12px
-  width: 300px
-  box-shadow: 0 0 10px rgba(0,0,0,0.5)
-  z-index: 5
+  width: 320px
+  max-width: 90vw
+  box-shadow: 0 0 10px rgba(0,0,0,0.4)
+  margin-top: 2rem
+  position: relative
   animation: fadeIn 0.3s ease-in-out
+  z-index: 5
 
   h3
     margin-top: 0
@@ -106,7 +98,17 @@ body
 @keyframes fadeIn
   from
     opacity: 0
-    transform: translate(-50%, 20px)
+    transform: translateY(20px)
   to
     opacity: 1
-    transform: translate(-50%, 0)
+    transform: translateY(0)
+
+.mascot
+  position: absolute
+  right: 2%
+  bottom: 2%
+  width: 160px
+
+@media (max-width: 768px)
+  .mascot
+    display: none

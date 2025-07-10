@@ -2,21 +2,22 @@
   <app-navbar></app-navbar>
 
   <div class="timeline-container">
-    <div class="timeline-line"></div>
+    <div class="timeline-scroll">
+      <div class="timeline-line"></div>
 
-    <div class="event" *ngFor="let evento of eventos" (click)="selecionarEvento(evento)">
-      <img [src]="evento.img" [alt]="evento.ano">
-      <div class="dot"></div>
-      <div class="year">{{ evento.ano }}</div>
+      <div class="event" *ngFor="let evento of eventos" (click)="selecionarEvento(evento)">
+        <img [src]="evento.img" [alt]="evento.ano">
+        <div class="dot"></div>
+        <div class="year">{{ evento.ano }}</div>
+      </div>
     </div>
 
-    <img class="mascot" src="Vovô - Museu.svg" alt="Mascote Vovô">
-
-    <!-- Card de informações -->
     <div class="info-card" *ngIf="eventoSelecionado">
       <button class="fechar" (click)="eventoSelecionado = null">X</button>
       <h3>{{ eventoSelecionado.ano }}</h3>
       <p>{{ eventoSelecionado.descricao }}</p>
     </div>
+
+    <img class="mascot" src="Vovô - Museu.svg" alt="Mascote Vovô">
   </div>
 </div>

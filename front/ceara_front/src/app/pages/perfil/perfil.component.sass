@@ -16,19 +16,55 @@ body
 
 .perfil-header
   display: flex
+  justify-content: space-between
   align-items: center
-  background-color: #7d48b1
+  background-color: #5e3393
   padding: 2rem
   margin: 2rem
-  border-radius: 16px
+  border-radius: 20px
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4)
+  flex-wrap: wrap
 
-.foto
-  width: 100px
-  height: 100px
-  object-fit: cover
-  margin-right: 2rem
-  //border-radius: 12px
-  //border: 2px solid white
+.perfil-info
+  display: flex
+  align-items: center
+  gap: 1.5rem
+
+// --- INÍCIO: ESTILOS PARA UPLOAD DA FOTO ---
+.foto-wrapper
+  position: relative // Essencial para posicionar o overlay
+  cursor: pointer
+  border-radius: 50% // Garante que o hover se aplique à área circular
+
+  // O seletor .foto original foi movido para dentro do .foto-wrapper
+  .foto
+    width: 100px
+    height: 100px
+    object-fit: cover
+    border-radius: 50%
+    border: 3px solid #ffffff30
+    display: block // Remove qualquer espaço extra indesejado
+
+  .upload-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 1.5rem
+    border-radius: 50%
+    opacity: 0 // Fica oculto por padrão
+    transition: opacity 0.3s ease
+
+  // Efeito hover para mostrar o ícone de upload
+  &:hover .upload-overlay
+    opacity: 1
+// --- FIM: ESTILOS PARA UPLOAD DA FOTO ---
 
 .infos
   display: flex
@@ -37,21 +73,46 @@ body
 
 .infos h2
   margin: 0
-  font-size: 1.6rem
+  font-size: 1.8rem
   color: white
+  display: flex
+  align-items: center
+  gap: 0.5rem
+
+.infos p
+  font-size: 0.95rem
+  color: #e0e0e0
+  display: flex
+  align-items: center
+  gap: 0.3rem
+
+.logout-btn
+  background-color: #9d4edd
+  color: white
+  border: none
+  padding: 0.6rem 1.2rem
+  border-radius: 8px
+  cursor: pointer
+  font-weight: bold
+  font-size: 0.9rem
+  display: flex
+  align-items: center
+  gap: 0.4rem
+  transition: background-color 0.3s
+
+  &:hover
+    background-color: #7b2cbf
 
 .atividade
   padding: 0 2rem 2rem 2rem
 
 .box
-  background-color: #7d48b1
+  background-color: #a87dd3
   border-radius: 16px
   display: flex
   padding: 1rem
   margin-bottom: 1.5rem
-
-.box.quiz
-  background-color: #a87dd3
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)
 
 .icone
   width: 60px
@@ -72,14 +133,20 @@ body
   font-size: 0.95rem
   color: #eee
 
+// Estilos para responsividade
 @media (max-width: 768px)
   .perfil-header
     flex-direction: column
     align-items: center
     text-align: center
 
-  .foto
-    margin: 0 0 1rem 0
+  .perfil-info
+    flex-direction: column
+    align-items: center
+    margin-bottom: 1rem
+
+  .logout-btn
+    margin-top: 1rem
 
   .box
     flex-direction: column
