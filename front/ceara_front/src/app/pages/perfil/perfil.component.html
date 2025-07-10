@@ -2,15 +2,13 @@
   <app-navbar></app-navbar>
 
 
-  <section class="perfil-header" *ngIf="usuario">
-    <img [src]="usuario.foto || 'ceara2.png'" alt="Foto do usuário" class="perfil foto">
+  <section class="perfil-header" *ngIf="usuario" >
+    <img [src]="usuario.foto || 'ceara2.png'" alt="Foto do usuário" class="perfil">
     <div class="infos">
       <h2>
         {{ usuario.nome }}
       </h2>
-      <p>Entrou em: {{ usuario.data_entrada | date:'dd/MM/yyyy' }}</p>
-
-      >>>>>>> a5cdede0957dbb1e60ad4c8ebf5d951da23fd813
+      <p class="data-entrou">Entrou em: {{ usuario.data_entrada | date:'dd/MM/yyyy' }}</p>
     </div>
   </section>
 
