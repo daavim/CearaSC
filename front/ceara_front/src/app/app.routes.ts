@@ -5,15 +5,18 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MuseuComponent } from './pages/museu/museu.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { authGuard } from './auth.guard';
+import { QuizDetalheComponent } from './pages/quiz-detalhe/quiz-detalhe.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: CadastroComponent },
 
-    { path: 'home', component: HomeComponent },
-    { path: 'museu', component: MuseuComponent },
-    { path: 'quiz', component: QuizComponent },
-    { path: 'perfil', component: PerfilComponent },
+    { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+    { path: 'museu', component: MuseuComponent, canActivate: [authGuard] },
+    { path: 'perfil', component: PerfilComponent, canActivate: [authGuard] },
+    { path: 'quiz', component: QuizComponent, canActivate: [authGuard] },
+    { path: 'quiz/:id', component: QuizDetalheComponent, canActivate: [authGuard] },
 
     { path: '**', component: LoginComponent }
 ];

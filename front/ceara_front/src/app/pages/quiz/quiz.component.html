@@ -1,16 +1,23 @@
 <div class="container">
-    <app-navbar></app-navbar>
-    <section class="quizzes">
-        <div class="box quizzes">
 
-            <div class="icone">
-            </div>
-            <div class="conteudo">
-                <h3>#1 . Titulo</h3>
-                <p>CEARÁ</p>
-            </div>
-        </div> 
+  <app-navbar></app-navbar>
 
-    </section>
-    <img class="mascot" src="Vovô - Apontando.svg" alt="Mascote Vovô"/>
+  <div class="quizzes-page">
+    <div class="quiz-list">
+      <div class="quiz-item" *ngFor="let quiz of quizzes" [routerLink]="['/quiz', quiz.id]">
+        <img src="ideas.png" alt="Ícone Quiz" class="quiz-icon">
+        <span>{{ quiz.nome }}</span>
+      </div>
+    </div>
+
+    <div class="quiz-details">
+      <div class="quiz-placeholder">
+        <!-- Conteúdo futuro aqui -->
+      </div>
+    </div>
+
+    <!-- Mascote -->
+    <img src="Vovo_Apontando.png" alt="Mascote" class="mascote">
+  </div>
+
 </div>

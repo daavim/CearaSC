@@ -1,0 +1,23 @@
+<div class="container">
+  <app-navbar></app-navbar>
+
+  <div class="quiz-detalhe" *ngIf="quiz">
+    <h2>{{ quiz.titulo }}</h2>
+    <p class="descricao">{{ quiz.descricao }}</p>
+
+    <div *ngFor="let pergunta of quiz.perguntas" class="pergunta">
+      <h4>{{ pergunta.texto }}</h4>
+
+      <ul>
+        <li *ngFor="let alt of pergunta.alternativas">
+          <label class="alternativa">
+            <input type="radio" [name]="'pergunta_' + pergunta.id" [value]="alt.id" />
+            <span>{{ alt.texto }}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <button class="btn-finalizar">Finalizar Quiz</button>
+  </div>
+</div>

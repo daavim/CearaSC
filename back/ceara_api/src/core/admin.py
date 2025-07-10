@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from .models import Alternativa, Museu, Pergunta, Quiz
+from .models import Alternativa, Museu, Pergunta, Quiz, Historico
 
 
 @admin.register(Museu)
@@ -23,3 +23,7 @@ class PerguntaAdmin(admin.ModelAdmin):
 @admin.register(Alternativa)
 class AlternativaAdmin(admin.ModelAdmin):
     list_display = ["pergunta", "texto", "correta"]
+
+@admin.register(Historico)
+class HistoricoAdmin(admin.ModelAdmin):
+    list_display = ["tipo", "titulo", "descricao"]
