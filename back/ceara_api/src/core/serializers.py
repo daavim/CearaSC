@@ -10,23 +10,28 @@ class MuseuSerializer(serializers.HyperlinkedModelSerializer):
         model = Museu
         fields = "__all__"
 
-
-class QuizSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Quiz
-        fields = "__all__"
-
-
-class PerguntaSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Pergunta
-        fields = "__all__"
-
-
 class AlternativaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Alternativa
-        fields = "__all__"
+        fields = ['id', 'texto', 'correta']
+
+
+class PerguntaSerializer(serializers.HyperlinkedModelSerializer):
+    alternativas = AlternativaSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Pergunta
+        fields = ['id', 'texto', 'alternativas']
+
+
+class QuizSerializer(serializers.HyperlinkedModelSerializer):
+    perguntas = PerguntaSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Quiz
+        fields = ['id', 'titulo', 'descricao', 'perguntas']
+
+
 
 
 class HistoricoSerializer(serializers.ModelSerializer):

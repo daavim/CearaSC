@@ -3,7 +3,7 @@
 
   <div class="quizzes-page">
     <div class="quiz-list">
-      <div class="quiz-item" *ngFor="let quiz of quizzes">
+      <div class="quiz-item" *ngFor="let quiz of quizzes" [routerLink]="['/quiz', quiz.id]">
         <img src="ideas.png" alt="Ícone Quiz" class="quiz-icon">
         <span>{{ quiz.nome }}</span>
       </div>
