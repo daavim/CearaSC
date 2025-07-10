@@ -15,7 +15,22 @@ body
   width: 100vw
   height: 100vh
 
+.perfil
+  width: 200px;
+  height: 200px;
+  background-image: url("../../../../public/matue.svg");
+  background-size: cover;
+  background-position: center;
 
+  mask-image: url("../../../../public/ceara.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  -webkit-mask-image: url("../../../../public/ceara.svg");
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 
 .perfil-header 
   display: flex;
@@ -30,8 +45,13 @@ body
   border: 3px solid white;
 
 
+.infos
+  background-color: #a87dd3;
+  width: 500px;
+  border-radius: 10px;
+
 .infos h2 
-  margin: 0;
+  margin: 1.5rem;
   font-size: 1.5rem;
 
 
@@ -39,7 +59,10 @@ body
   font-size: 0.75rem;
   color:#d8a109
   margin-left: 10px;
+  text-shadow: #000 2px 2px 2px;
 
+.data-entrou
+  margin: 1.5rem;
 
 .atividade 
   padding: 0 2rem 2rem 2rem;
