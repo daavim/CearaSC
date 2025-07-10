@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Museu(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    data = models.DateField()
+    ano = models.IntegerField()
 
 
 class Quiz(models.Model):

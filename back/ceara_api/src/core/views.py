@@ -21,7 +21,7 @@ from .serializers import (
 
 
 class MuseuViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Museu.objects.all()
+    queryset = Museu.objects.all().order_by('ano')
     serializer_class = MuseuSerializer
 
 

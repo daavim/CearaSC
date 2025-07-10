@@ -7,7 +7,7 @@ from .models import Alternativa, Museu, Pergunta, Quiz, Historico, Jogador, Perf
 
 @admin.register(Museu)
 class MuseuAdmin(admin.ModelAdmin):
-    list_display = ["titulo", "descricao", "data"]
+    list_display = ["titulo", "descricao", "ano"]
 
 
 @admin.register(Quiz)
@@ -29,9 +29,9 @@ class HistoricoAdmin(admin.ModelAdmin):
     list_display = ["tipo", "titulo", "descricao"]
 
 @admin.register(Jogador)
-class HistoricoAdmin(admin.ModelAdmin):
+class JogadorAdmin(admin.ModelAdmin):
     list_display = ["nome", "sobrenome", "idade", "posicao"]
 
 @admin.register(Perfil)
-class HistoricoAdmin(admin.ModelAdmin):
+class PerfilAdmin(admin.ModelAdmin):
     list_display = ["foto"]
